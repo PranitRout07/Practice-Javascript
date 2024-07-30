@@ -36,8 +36,20 @@ if (bal>500) console.log("test");
 
 //check an object is empty or not
 
-const emptyObj = {}
+// const emptyObj = {}
 
-if (Object.keys(emptyObj).length === 0){
-    console.log("Object is empty")
-}
+// if (Object.keys(emptyObj).length === 0){
+//     console.log("Object is empty")
+// }
+
+//Nullish coalescing operator (??)
+
+let val1 
+// val1 = undefined ?? (function(){ return 10 })();
+val1 = null ?? (function(){ return 10 })();
+// console.log(val1)
+
+//ternary operator
+
+const price = 100 
+price >= 100 ? console.log("greater than 100") : console.log("less than 100")
