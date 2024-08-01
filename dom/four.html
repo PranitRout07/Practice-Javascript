@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM PRACTICE 4</title>
+</head>
+<body style="background-color: black; color: white;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    //task :- to add another list element
+    function addListElement(language){
+        const li = document.createElement('li')
+        const text = document.createTextNode(language)
+        li.appendChild(text)
+
+        //find by classname
+        const ul = document.querySelector('.language')
+        ul.appendChild(li)
+        document.body.appendChild(ul)
+    }   
+    function Edit(pos,updatedLang){
+        const langUpdate = document.querySelector(`li:nth-child(${pos})`);
+        console.log(langUpdate)
+        const newli = document.createElement('li')
+        newli.textContent = updatedLang
+        langUpdate.replaceWith(newli)
+
+    }
+
+    function remove(pos){
+        const line = document.querySelector(`li:nth-child(${pos})`);
+        if (line!=null){
+            line.remove()
+        }
+    }
+    addListElement("python")
+    addListElement("golang")
+
+    Edit(2,"Mojo")
+    Edit(2,"Python")
+    remove(1)
+    remove(3)
+</script>
+</html>
