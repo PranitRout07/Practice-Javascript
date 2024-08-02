@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess The Number</title>
+</head>
+<body style="background-color: black; padding: 0px;">
+    <nav style="color:blueviolet; padding:30px; border-color: black; background-color: azure; text-align:center; font-size: 32px;font-weight: bolder;">
+        GUESS THE NUMBER
+    </nav>  
+    <div id="result" style="margin-top: 30px; color:rgb(63, 71, 60); padding:30px; border-color: black; background-color: rgb(202, 201, 206); text-align:center; font-size: 16px;font-weight: bolder;">
+        <h2>Guess a number between 1 and 100</h2>
+        <div>
+            <p style="color: black; font-weight: bolder;">You can try 5 times</p>
+        </div>
+        <form>
+            <input id="guess" type="text" style="padding: 12px;">
+            <button style="border-color: antiquewhite; border-radius: 4px; background-color: rgb(215, 251, 215); padding: 8px; color: black; font-weight: bolder;">Guess</button>
+        </form>
+
+
+        <div id="r">
+            <div id="pre" style="margin-top: 10px;">
+                <p><b>Previous guesses: [] </b></p> 
+            </div>
+            <div id="triesleft">
+                <p><b>Num of trials remaining : 5</b></p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <a href="http://127.0.0.1:5500/projects/guess-the-number/guess-the-number.html" style="font-weight: bolder; color:blanchedalmond">Back</a>
+    </div>
+</body>
+<script src="logic.js">
+
+</script>
+</html>
