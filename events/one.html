@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+<body style="background-color: #414141; color: white;">
+    <h2>Images</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" height="220px" src="https://images.pexels.com/photos/27244368/pexels-photo-27244368/free-photo-of-lake-viti-on-iceland.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" id="img1"></li>
+            <li><img width="200px" height="220px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR132TBAD0-GhGhN8_2Xr-3obkFd4NzFbk6Hg&s" id="img2"></li>
+            <!-- The below approach using onclick can create scalability issues . not a good approach but in react you can use it as there it is scalable.-->
+            <!-- <li><img width="200px" height="220px" onclick="alert('hello')" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsru95BPiuzSuio2iWyhWKrAJl53cbyn47uw&s" id="img3"></li> -->
+            <li><img width="200px" height="220px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsru95BPiuzSuio2iWyhWKrAJl53cbyn47uw&s" id="img3"></li>
+            <li><img width="200px" height="220px" src="https://media.istockphoto.com/id/598574176/photo/night-sky.jpg?s=612x612&w=0&k=20&c=1FJT0qO6ztKyQ1spMvlI8tlaKZz5DOnMq8_EDQtSyy8=" id="img4"></li>
+            <li><img width="200px" height="220px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThekzLpdHeOcQr6IQJ1Rm7xVC1kiR2VH2RAw&s"></li>
+        </ul>
+        <a href="https://google.com" id="btn">Click</a>
+    </div>
+</body>
+<script>
+    //not a good approach
+    // document.querySelector('#img3').onclick = function(){
+    //     alert('hello World')
+    // }
+
+    //best approach
+    // document.querySelector("#img3").addEventListener('click',function(){
+    //     alert('hello')
+    // },false)
+
+    //event object
+    // document.querySelector("#img3").addEventListener('click',function(e){
+        // console.log(e)
+        //type,timestamp,defaultPrevent,target,toElement,currentTarget,clientX,clientY,screenX,screenY
+        //altkey,ctrlkey,shiftkey,keycode
+    // },false)
+    //Here you can see the boolean value at the end , this represents event propagation
+    //false represents event bubbling 
+    //true represents event capturing
+
+    //below is bubbling up approach first the img3 will print then the ul part when clicked the img3
+    // document.querySelector("#images").addEventListener('click',function(e){
+    //     console.log("clicked inside ul");
+    // },false)
+    // document.querySelector("#img3").addEventListener('click',function(e){
+    //     console.log("clicked img3");
+    // },false)
+
+    //capturing mode, first ul captured then img3
+
+    // document.querySelector("#images").addEventListener('click',function(e){
+    //     console.log("clicked inside ul");
+    // },true)
+    // document.querySelector("#img3").addEventListener('click',function(e){
+    //     console.log("clicked img3");
+    // },true)
+
+    //event stop propagation, event will not bubble and move upwards
+    // document.querySelector("#images").addEventListener('click',function(e){
+    //     console.log("clicked inside ul");
+    // },false)
+    // document.querySelector("#img3").addEventListener('click',function(e){
+    //     console.log("clicked img3");
+    //     e.stopPropagation()
+    // },false)
+
+
+    //stop an event
+    // document.querySelector("#btn").addEventListener('click',function(e){
+    //     console.log('clicked button')
+    //     e.preventDefault()
+    //     e.stopPropagation()
+    // },false)
+</script>
+</html>
