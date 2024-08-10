@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Projects</title>
+</head>
+<body>
+    <h1 id="txt">Hello world</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    //This setTimeout will be execute after a certain time has passed.
+    //below function will be executed after 2sec
+    const change = setTimeout(function(){
+        document.querySelector("#txt").innerHTML = "New World"
+    },2000)
+    //settimeout function will always execute after a certain time, but
+    //can cancel the function from running if you use
+    //clearTimeout
+    document.querySelector("#stop").addEventListener('click',function(){
+        clearTimeout(change)
+        console.log("Stopped...")
+    })
+
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Projects</title>
+</head>
+<body>
+    <h1 id="txt">Hello world</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    //This setinterval will print every 1 second in the below code
+    let start 
+    document.querySelector("#start").addEventListener('click',function(){
+        start = setInterval(function(){
+        console.log("Hello pranit",Date.now())
+    },1000)   
+    })
+
+    document.querySelector("#stop").addEventListener('click',function(){
+        clearInterval(start)
+        console.log("stopped")
+    })
+ 
+
+</script>
+</html>
