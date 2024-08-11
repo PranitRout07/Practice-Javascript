@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Projects</title>
+</head>
+<body>
+    <h1 id="txt">Hello world</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    let inv
+    document.querySelector('#start').addEventListener('click',function(){
+        let color = ['red','blue','cyan','yellow','red','pink','green','orange','violet','indigo']
+        if(!inv){
+        inv = setInterval(function(){
+            index = Math.floor(Math.random()*color.length)
+            console.log(color[index])
+            document.querySelector('body').style.backgroundColor = color[index]
+        },1000)
+        }
+    })
+
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearInterval(inv)
+        inv = null
+    })
+ 
+
+</script>
+</html>
