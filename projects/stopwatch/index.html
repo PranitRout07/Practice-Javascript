@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Watch</title>
+</head>
+<body>
+    <h1>Stop Watch</h1>
+    <button id="start" style="background-color: rgb(114, 152, 176); padding: 4px;">Start Timer</button>
+    <button id="reset" style="background-color: rgb(140, 230, 226); padding: 4px;">Reset</button>
+    <h2 id="showcount"></h2>
+</body> 
+<script>
+    const showcount = document.querySelector("#showcount")
+
+    let time = 0
+    let boolVal = true
+    let start =document.querySelector("#start").addEventListener("click",function(e){
+        e.preventDefault();
+        console.log(boolVal)
+        
+            
+        let timerId = setInterval(()=>{
+        showcount.innerHTML = time 
+        if(!boolVal){
+            
+            clearInterval(timerId)
+        }
+        time = time + 1
+        },1000)
+        
+
+
+    })
+
+    document.querySelector("#reset").addEventListener("click",function(e){
+        e.preventDefault();
+        time = 0;
+        boolVal = false;
+
+
+    })
+</script>
+</html>
